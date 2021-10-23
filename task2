@@ -1,0 +1,32 @@
+def check_parentheses(str, n):
+    ans = True
+    s = []
+    for i in str:
+        if i == "(" or i == "[" or i == "{":
+            s.append(i)
+        else:
+            if len(s) > 0:
+                temp = s[len(s) - 1]
+                s.pop()
+                if i == "(" and temp != ")":
+                    ans = False
+                    break
+                if i == "[" and temp != "]":
+                    ans = False
+                    break
+                if i == "{" and temp != "}":
+                    ans = False
+                    break
+            else:
+                ans = False
+                break
+    if len(s) > 0:
+        ans = False
+    if ans:
+        print("balanced")
+    else:
+        print("Not balanced")
+s = input("Enter the expression")
+print(s)
+n = len(s)
+check_parentheses(s, n)
