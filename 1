@@ -1,0 +1,12 @@
+#Task 1
+def main():
+    str = input("Enter a string: ")
+    str2 = [c for c in str.lower() if c.isalpha()]
+    rev_str = reversed(str2)
+    # check if the string is equal to its reverse
+    if list(str2) == list(rev_str):
+        print(str,"is a palindrome")
+    else:
+        print(str, "is not a palindrome")
+if _name_ == '_main_':
+    main()
